@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HTTP Requests</title>
+  </head>
+  <body>
+    {% for request in requests %}
+      <p>method: {{ request.method }}, URL: {{ request.url }}, version: {{ request.version }}</p>
+    {% endfor %}
+  </body>
+</html>
