@@ -24,8 +24,8 @@ class TCPPacket(db.Model):
             raise
 
     @classmethod
-    def get_tcp(cls):
-        return cls.query.all()
+    def get_tcp(cls, page=0, per_page=20):
+        return cls.query.offset(page).limit(per_page).all()
 
 class HTTPrequest(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -48,5 +48,5 @@ class HTTPrequest(db.Model):
             db.session.rollback()
             raise
     @classmethod
-    def get_requests(cls):
-        return cls.query.all()
+    def get_requests(cls, page = 0, per_page = 20):
+        return cls.query.offset(page).limit(per_page).all()

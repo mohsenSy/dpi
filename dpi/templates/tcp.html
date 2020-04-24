@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}
+TCP Packets
+{% endblock %}
+{% block content %}
+  {% for tcp in tcps %}
+  <p>
+    ({{ tcp.srcIP }}:{{ tcp.srcPort }}) --> ({{ tcp.dstIP }}:{{ tcp.dstPort }})
+  </p>
+  {% else %}
+    <h2>No packets</h2>
+  {% endfor %}
+{% endblock %}
